@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap');
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Inconsolata', monospace;
+}
+body{
+   background-color: #333;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.container{
+   min-width: 300px;
+   min-height: 400px;
+   background-color: #333;
+   position: relative;
+   padding: 40px 30px 30px;   
+   border-radius: 20px;
+   box-shadow: 25px 25px 75px rgba(0,0,0,.25),
+   10px 10px 70px rgba(0,0,0,.25),
+   inset -5px -5px 15px rgba(0,0,0,.5),
+   inset 5px 5px 15px rgba(0,0,0,.5);
+}
+.calculator{
+   position: relative;
+   display: grid;
+   .value{
+      position: relative;
+      grid-column: span 4;
+      width: calc(100% - 20px);
+      left: 10px;
+      height: 100px;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      margin-bottom:10px;
+      background-color: #a7af7c;
+      box-shadow: 0 0 0 2px rgba(0,0,0,.75);
+      padding: 10px;
+      font-size: 2em;
+      text-align: right;
+   }
+   .clear{
+      grid-column: span 2;
+      width: 180px;
+      background: #f00;
+      &:before{
+         content: '';
+         background: linear-gradient(90deg , #d20000, #ffffff5c);
+         border-left: 1px solid #fff4;
+         border-bottom: 1px solid #fff4;
+         border-top: 1px solid #fff4;
+      }
+   }
+   .plus{
+      grid-row: span 2;
+      height: 180px;
+   }
+   .equel{
+      background: #2196f3;
+      &:before{
+         content: '';
+         background: linear-gradient(90deg , #1479c9, #ffffff5c);
+         border-left: 1px solid #fff4;
+         border-bottom: 1px solid #fff4;
+         border-top: 1px solid #fff4;
+      }
+   }
+   span{
+      color: #fff;
+      width: 80px;
+      height: 80px;
+      position: relative;
+      display: grid;
+      margin: 8px;
+      background:linear-gradient(180deg , #2f2f2f, #3f3f3f);
+      box-shadow: inset -8px 0 8px rgba(0,0,0,.15),
+      inset 0 -8px 8px rgba(0,0,0,.25),
+      inset 0 0 0 2px rgba(0,0,0,.75),
+      10px 20px 70px rgba(0,0,0,.4);
+      user-select: none;
+      cursor: pointer;
+      font-weight: 400;
+      border-radius: 10px;
+      place-items: center;
+      &:active{
+         filter: brightness(1.5);
+      }
+      &:before{
+         content: '';
+         position: absolute;
+         top: 3px;
+         left: 3px;
+         bottom: 14px;
+         right: 12px;
+         background:linear-gradient(90deg , #2d2d2d, #4d4d4d);
+         border-radius: 10px;
+         box-shadow: -5px -5px 15px rgba(0,0,0,.1),
+         10px 5px 10px rgba(0,0,0,.15);
+         border-left: 1px solid #0004;
+         border-bottom: 1px solid #0004;
+         border-top: 1px solid #0009;
+      }
+   }
+   span i {
+      position: relative;
+      font-style: normal;
+      font-size: 1.5em;
+      text-transform: uppercase;
+   }
+}
